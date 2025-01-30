@@ -17,6 +17,13 @@ def pesquisa_binaria(lista, item):
         
     return None
 
+def pesquisa_simples(lista: list, item):
+    for info in lista:
+        if info == item:
+            return lista.index(item)
+
+    return None
+
 
 with open("names.json", "r") as file:
     dados = json.load(file)
@@ -24,5 +31,5 @@ with open("names.json", "r") as file:
 list_with_128_names = dados["list_with_128_names"]
 list_with_256_names = dados["list_with_256_names"]
 
-print(pesquisa_binaria(list_with_128_names, "Carlos")) # -> 28
+print(pesquisa_simples(list_with_128_names, "Carlos")) # -> 28
 print(pesquisa_binaria(list_with_256_names, "Thaisa")) # -> None
